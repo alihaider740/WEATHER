@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://axios-http.com/docs/intro">
+      const weatherResult = new Promise((resolve, reject) => {
+        if (5 > 6) {
+          resolve({
+            lahore: "27",
+          });
+        } else {
+          reject({ message: "Failed" });
+        }
+      });
+      weatherResult
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        async function getChatbotAnswer() {
+            try {
+                const res = await anxios.get(
+                   " https://p2pclouds.up.railway.app/v1/learn/weather?city=lahore"
+                );
+                console.log(res.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getChatbotAnswer();
+    </script>
+  </body>
+</html>
